@@ -1,0 +1,25 @@
+{
+  "name": "big-kahuna",
+  "version": "1.0.0",
+  "description": "like commander and yargs - but this kahuna is not as big",
+  "main": "bigkahuna.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebrenny/big-kahuna.git"
+  },
+  "keywords": [
+    "big",
+    "kahuna",
+    "commander",
+    "yargs",
+    "args",
+    "argv"
+  ],
+  "author": "Brenny <iam@justbrenny.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thebrenny/big-kahuna/issues"
+  },
+  "homepage": "https://github.com/thebrenny/big-kahuna#readme"
+}
