@@ -115,10 +115,10 @@ class MissingRequiredArgumentException {
     }
     genMessage(args) {
         let randLol = [
-            'The Kahuna needed that paperwork yesterday!',
-            'This\'ll be chonked from your pay!',
-            'The whole world is stopping because of this!',
-            'You\' lunch break already finished, so you can\'t slack off now!'
+            "The Kahuna needed that paperwork yesterday!",
+            "This'll be chonked from your pay!",
+            "The whole world is stopping because of this!",
+            "Your lunch break already finished, so you can't slack off now!"
         ];
         randLol = randLol[Math.floor(Math.random() * randLol.length)];
 
