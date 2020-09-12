@@ -7,7 +7,7 @@ class BigKahuna {
         this.nodashArgs = {};
 
         this.programCall = process.argv.splice(0, 2);
-        args = args || process.argv.slice(2);
+        args = args || process.argv;
 
         this.processArgs(args);
 
