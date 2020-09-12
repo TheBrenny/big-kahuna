@@ -6,6 +6,7 @@ class BigKahuna {
         this.args = {};
         this.nodashArgs = {};
 
+        this.programCall = process.argv.splice(0, 2);
         args = args || process.argv.slice(2);
 
         this.processArgs(args);
