@@ -1,12 +1,15 @@
 {
   "name": "big-kahuna",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "like commander and yargs - but this kahuna is not as big",
   "main": "bigkahuna.js",
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thebrenny/big-kahuna.git"
+  },
+  "logo": {
+    "file": "./img/logo-small.png"
   },
   "keywords": [
     "big",

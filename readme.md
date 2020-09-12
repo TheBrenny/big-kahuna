@@ -1,4 +1,4 @@
-<div style="text-align:center;"><img src="./img/logo.png" alt="big kahuna's tie" height="500"/></div>
+<div style="text-align:center;"><img src="./img/logo.svg" alt="big kahuna's tie" height="500"/></div>
 
 big kahuna does the thing that you want it to do
 
