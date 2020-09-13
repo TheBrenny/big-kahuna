@@ -31,6 +31,7 @@ if(bossman.has("h", "help", "?", "plz-help-me")) printHelp();
 
 let dinnerTime = bossman.answer("time", "whats-the-time-mr-wolf", "the-time-plz");
 let run = bossman.must.answer("required-runner"); // .must is a strict kahuna!
+let names = bossman.answerAmount(3, "3namesare"); // get 3 params!
 ```
 
 ooooohh yeeaaaahh

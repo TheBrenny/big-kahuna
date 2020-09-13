@@ -61,29 +61,44 @@ class BigKahuna {
         return this.nodashArgs;
     }
 
-    has() {
-        let arg = Array.from(arguments) || [];
-        if (!arg) return false;
-        if (!this.careForDashes) arg = arg.map(a => a.replace(/^-+/gm, ''));
+    has(...argsIn) {
+        argsIn = argsIn || [];
+        if (!argsIn.length) return false;
+        if (!this.careForDashes) argsIn = argsIn.map(a => a.replace(/^-+/gm, ''));
 
-        let args = this.cabinet();
+        let cabinet = this.cabinet();
 
-        for (const a of arg) {
-            if (args.includes(a)) return true;
+        for (const a of argsIn) {
+            if (cabinet.includes(a)) return true;
         }
 
         return false;
     }
 
-    answer() {
-        let arg = Array.from(arguments) || [];
-        if (!arg) return false;
-        if (!this.careForDashes) arg = arg.map(a => a.replace(/^-+/gm, ''));
+    answer(...argsIn) {
+        argsIn = argsIn || [];
+        if (!argsIn.length) return false;
+        if (!this.careForDashes) argsIn = argsIn.map(a => a.replace(/^-+/gm, ''));
 
-        let args = this.folders();
+        let folders = this.folders();
 
-        for (const a of arg) {
-            if (args.hasOwnProperty(a)) return args[a];
+        for (const a of argsIn) {
+            if (folders.hasOwnProperty(a)) return folders[a];
+        }
+        return undefined;
+    }
+
+    answerAmount(amount, ...argsIn) {
+        argsIn = argsIn || [];
+        if (!argsIn.length) return false;
+        if (!this.careForDashes) argsIn = argsIn.map(a => a.replace(/^-+/gm, ''));
+
+        let cabinet = this.cabinet();
+
+        for (let c = 0; c < cabinet.length; c++) {
+            if (argsIn.includes(cabinet[c])) {
+                return cabinet.slice(c, c + amount);
+            }
         }
         return undefined;
     }
@@ -97,14 +112,19 @@ class StrictKahuna extends BigKahuna {
         if (typeof c === 'undefined') throw new MissingRequiredArgumentException(item);
         return c;
     }
-    has() {
-        let doesHave = super.has.apply(this, Array.from(arguments));
-        if (!doesHave) throw new MissingRequiredArgumentException(Array.from(arguments));
+    has(...argsIn) {
+        let doesHave = super.has.apply(this, [...argsIn]);
+        if (!doesHave) throw new MissingRequiredArgumentException([...argsIn]);
         return doesHave;
     }
-    answer() {
-        let a = super.answer.apply(this, Array.from(arguments));
-        if (typeof a === 'undefined') throw new MissingRequiredArgumentException(Array.from(arguments));
+    answer(...argsIn) {
+        let a = super.answer.apply(this, argsIn);
+        if (typeof a === 'undefined') throw new MissingRequiredArgumentException([...argsIn]);
+        return a;
+    }
+    answerAmount(amount, ...argsIn) {
+        let a = super.answerAmount.apply(this, [amount, ...argsIn]);
+        if (typeof a === 'undefined') throw new MissingRequiredArgumentException([...argsIn]);
         return a;
     }
 }
