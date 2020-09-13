@@ -97,7 +97,16 @@ class BigKahuna {
 
         for (let c = 0; c < cabinet.length; c++) {
             if (argsIn.includes(cabinet[c])) {
-                return cabinet.slice(c, c + amount);
+                c++; // increment so we are looking at the first arg
+                if (typeof amount === "number") {
+                    return cabinet.slice(c, c + amount);
+                } else if (Array.isArray(amount)) {
+                    let collect = cabinet.slice(c, c + amount[1]);
+                    for (let q = amount[0]; q < collect.length; q++) {
+                        if (collect[q].startsWith("-")) return collect.slice(0, q);
+                    }
+                    return collect;
+                }
             }
         }
         return undefined;
