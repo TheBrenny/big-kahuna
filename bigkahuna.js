@@ -140,7 +140,7 @@ class StrictKahuna extends BigKahuna {
 class MissingRequiredArgumentException {
     constructor(args) {
         this.name = "MissingRequiredArgumentException";
-        this.message = genMessage(args);
+        this.message = this.genMessage(args);
     }
     genMessage(args) {
         let randLol = [
