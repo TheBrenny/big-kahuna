@@ -6,8 +6,8 @@ class BigKahuna {
         this.args = {};
         this.nodashArgs = {};
 
-        this.programCall = process.argv.splice(0, 2);
-        args = args || process.argv;
+        this.programCall = process.argv.slice(0, 2);
+        args = args || process.argv.slice(2);
 
         this.processArgs(args);
 
@@ -137,8 +137,9 @@ class StrictKahuna extends BigKahuna {
         return a;
     }
 }
-class MissingRequiredArgumentException {
+class MissingRequiredArgumentException extends Error {
     constructor(args) {
+        super();
         this.name = "MissingRequiredArgumentException";
         this.message = this.genMessage(args);
     }
