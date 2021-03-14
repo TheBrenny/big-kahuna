@@ -1,6 +1,6 @@
 {
   "name": "big-kahuna",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "like commander and yargs - but this kahuna is not as big",
   "main": "bigkahuna.js",
   "scripts": {},
