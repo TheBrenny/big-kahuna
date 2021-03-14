@@ -1,4 +1,6 @@
-<div style="text-align:center;"><img src="./img/logo.svg" alt="big kahuna's tie" height="500"/></div>
+<div style="text-align:center;">
+<img src="./img/logo-small.svg" alt="big kahuna.js" width="150"/>
+</div>
 
 big kahuna does the thing that you want it to do
 
@@ -79,6 +81,4 @@ so he's willing to do all the work all alone!
 
 **he'll tell you what's up, so you can dictate what's going down!**
 
-<div style="text-align:center;">
-<img src="./img/logo-small.png" alt="big kahuna.js" width="150"/>
-</div>
+<div style="text-align:center;"><img src="./img/logo.svg" alt="big kahuna's tie" height="500"/></div>
